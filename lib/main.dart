@@ -13,7 +13,6 @@ Future<void> main() async {
   DioHelper.init();
   await CacheHelper.init();
 
-
   DateTime dateTime = DateTime.now();
   print(dateTime.hour);
   runApp(const MyApp());
@@ -26,19 +25,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context)=>WeatherCubit()..GetWeatherData(),//..GetCityData(),
-      child: BlocConsumer<WeatherCubit,WeatherStates>(
+      create: (BuildContext context) => WeatherCubit(), //..GetCityData(),
+      child: BlocConsumer<WeatherCubit, WeatherStates>(
         builder: (BuildContext context, WeatherStates state) {
-
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: SelectCity(),
           );
         },
-        listener: (BuildContext context, WeatherStates state) {  },
-
+        listener: (BuildContext context, WeatherStates state) {},
       ),
     );
   }
 }
-
