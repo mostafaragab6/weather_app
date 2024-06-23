@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context)=>WeatherCubit()..GetWeatherData(),//..GetCityData(),
+      create: (BuildContext context)=>WeatherCubit(),//..GetCityData(),
       child: BlocConsumer<WeatherCubit,WeatherStates>(
         builder: (BuildContext context, WeatherStates state) {
 
